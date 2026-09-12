@@ -2,14 +2,13 @@ package core.basesyntax;
 
 public class Circle extends Figure {
     private double radius = 0;
-    private String name = "circle";
-    private String color = "white";
     private double area = 0; 
 
     public Circle(double radius, String color) {
         this.radius = radius;
-        this.color = color;
         this.area = this.getArea(radius);
+        super.setName("circle");
+        super.setColor(color);
     }
     
     public double getArea(double radius) {
@@ -18,7 +17,7 @@ public class Circle extends Figure {
     }
 
     public String draw() {
-        return "Figure " + name + " pole: " + area 
-            + "sq. units, side: " + radius + " units color: " + color;
+        return "Figure " + getName() + " pole: " + area 
+            + "sq. units, side: " + radius + " units color: " + getColor();
     }   
 }

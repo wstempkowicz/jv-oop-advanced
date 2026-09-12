@@ -4,15 +4,14 @@ public class IsoscelesTrapezoid extends Figure {
     private double side1;
     private double side2;
     private double sideh;
-    private String name = "isosceles trapezoid";
-    private String color = "";
     private double area = 0;
 
     public IsoscelesTrapezoid(double side1, double side2, double sideh, String color) {
         this.side1 = side1;
         this.side2 = side2;
         this.sideh = sideh;
-        this.color = color;
+        super.setColor(color);
+        super.setName("isosceles trapezoid");
         this.area = this.getArea(side1, side2, sideh);
     }
 
@@ -21,8 +20,8 @@ public class IsoscelesTrapezoid extends Figure {
     }
 
     public String draw() {
-        return "Figure " + name + " pole: " + area 
-            + " sq. units, side1: " + side2 + " units, side2: " + side2 + " units, sideh: "
-            + sideh + " units color: " + color;
-    } 
+        return "Figure " + getName() + " pole: " + area
+                + " sq. units, side1: " + side2 + " units, side2: " + side2 + " units, sideh: "
+                + sideh + " units color: " + getColor();
+    }
 }

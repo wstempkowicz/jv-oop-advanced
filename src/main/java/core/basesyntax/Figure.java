@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-public class Figure {
+public abstract class Figure {
     protected String name;
     protected String color;
 
@@ -20,7 +20,6 @@ public class Figure {
         this.color = color;
     }
 
-    public String draw() {
-        return "";
-    }
+    public abstract String draw();
+
 }
