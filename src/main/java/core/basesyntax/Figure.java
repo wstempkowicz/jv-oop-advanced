@@ -19,7 +19,8 @@ public class Figure {
     public void setColor(String color) {
         this.color = color;
     }
-    public String draw() {
 
+    public String draw() {
+        return "";
     }
 }

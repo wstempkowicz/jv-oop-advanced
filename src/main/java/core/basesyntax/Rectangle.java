@@ -11,10 +11,10 @@ public class Rectangle extends Figure {
         this.side1 = side1;
         this.side2 = side2;
         this.color = color;
-        this.area = this.area(side1, side2);
+        this.area = this.getArea(side1, side2);
     }
 
-    public int area(int side1, int side2) {
+    public int getArea(int side1, int side2) {
         int area = side2 * side1;
         return area;
     }   

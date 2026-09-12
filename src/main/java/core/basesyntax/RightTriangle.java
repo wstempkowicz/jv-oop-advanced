@@ -11,10 +11,10 @@ public class RightTriangle extends Figure {
         this.firstLeg = firstLeg;
         this.secondLeg = secondLeg;
         this.color = color;
-        this.area = this.area(firstLeg, secondLeg);
+        this.area = this.getArea(firstLeg, secondLeg);
     }
 
-    public double area(int firstLeg, int secondLeg) {
+    public double getArea(int firstLeg, int secondLeg) {
         double area = firstLeg * secondLeg / 2;
         return area;
     }

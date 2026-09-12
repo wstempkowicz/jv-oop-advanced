@@ -9,10 +9,10 @@ public class Circle extends Figure {
     public Circle(int radius, String color) {
         this.radius = radius;
         this.color = color;
-        this.area = this.area(radius);
+        this.area = this.getArea(radius);
     }
     
-    public double area(int radius) {
+    public double getArea(int radius) {
         double area = Math.PI * radius * radius;
         return area;
     }

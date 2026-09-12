@@ -13,10 +13,10 @@ public class IsoscelesTrapezoid extends Figure {
         this.side2 = side2;
         this.sideh = sideh;
         this.color = color;
-        this.area = this.area(side1, side2, sideh);
+        this.area = this.getArea(side1, side2, sideh);
     }
 
-    public double area(int side1, int side2, int sideh) {
+    public double getArea(int side1, int side2, int sideh) {
         return (side1 + side2) * sideh / 2;
     }
 

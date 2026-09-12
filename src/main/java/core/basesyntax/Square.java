@@ -9,11 +9,11 @@ public class Square extends Figure {
     public Square(int side, String color) {
         this.side = side;
         this.color = color;
-        this.area = this.area(side);
+        this.area = this.getArea(side);
     }
 
-    private int area(int side) {
-        return area = side * side;
+    private int getArea(int side) {
+        return side * side;
     }
 
     public String draw() {
