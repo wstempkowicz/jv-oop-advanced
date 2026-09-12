@@ -8,11 +8,11 @@ public class Square extends Figure {
         this.side = side;
         super.setColor(color);
         super.setName("square");
-        this.area = this.getArea(side);
+        this.area = this.getArea();
     }
 
-    private double getArea(double side) {
-        return side * side;
+    private double getArea() {
+        return this.side * this.side;
     }
 
     public String draw() {

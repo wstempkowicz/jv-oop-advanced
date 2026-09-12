@@ -17,7 +17,7 @@ public class FigureSupplier {
         int b;
         int value = randomValueSupplier.nextInt(figureNames.length);
         ColorSupplier color = new ColorSupplier();
-        String figureName = figureNames[value].toString().toLowerCase();
+        String figureName = figureNames[value].name().toLowerCase();
         switch (figureName) {
             case "circle":
                 int radius = randomValueSupplier.nextInt(100);
@@ -44,7 +44,6 @@ public class FigureSupplier {
             default:
                 return randomFigure;
         }
-        
+
     }
 }
-

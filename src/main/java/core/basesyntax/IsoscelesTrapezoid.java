@@ -12,11 +12,11 @@ public class IsoscelesTrapezoid extends Figure {
         this.sideh = sideh;
         super.setColor(color);
         super.setName("isosceles trapezoid");
-        this.area = this.getArea(side1, side2, sideh);
+        this.area = this.getArea();
     }
 
-    public double getArea(double side1, double side2, double sideh) {
-        return (side1 + side2) * sideh / 2;
+    public double getArea() {
+        return (this.side1 + this.side2) * this.sideh / 2;
     }
 
     public String draw() {

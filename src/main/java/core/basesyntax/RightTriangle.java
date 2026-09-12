@@ -10,12 +10,11 @@ public class RightTriangle extends Figure {
         this.secondLeg = secondLeg;
         super.setColor(color);
         super.setName("right triangle");
-        this.area = this.getArea(firstLeg, secondLeg);
+        this.area = this.getArea();
     }
 
-    public double getArea(double firstLeg, double secondLeg) {
-        double area = firstLeg * secondLeg / 2;
-        return area;
+    public double getArea() {
+        return this.firstLeg * this.secondLeg / 2;
     }
 
     public String draw() {

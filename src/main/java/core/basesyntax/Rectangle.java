@@ -10,11 +10,11 @@ public class Rectangle extends Figure {
         this.side2 = side2;
         super.setColor(color);
         super.setName("rectangle");
-        this.area = this.getArea(side1, side2);
+        this.area = this.getArea();
     }
 
-    public double getArea(double side1, double side2) {
-        return side2 * side1;
+    public double getArea() {
+        return this.side2 * this.side1;
     }
 
     public String draw() {
