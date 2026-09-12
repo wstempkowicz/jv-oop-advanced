@@ -1,22 +1,21 @@
 package core.basesyntax;
 
 public class Rectangle extends Figure {
-    private int side1;
-    private int side2;
+    private double side1;
+    private double side2;
     private String name = "square";
     private String color = "";
-    private int area = 0;
+    private double area = 0;
 
-    public Rectangle(int side1, int side2, String color) {
+    public Rectangle(double side1, double side2, String color) {
         this.side1 = side1;
         this.side2 = side2;
         this.color = color;
         this.area = this.getArea(side1, side2);
     }
 
-    public int getArea(int side1, int side2) {
-        int area = side2 * side1;
-        return area;
+    public double getArea(double side1, double side2) {
+        return side2 * side1;
     }   
 
     public String draw() {
