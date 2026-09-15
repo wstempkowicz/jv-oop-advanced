@@ -9,12 +9,13 @@ public class FigureSupplier {
     private Figure randomFigure = null;
 
     public Figure[] getDefaultFigure() {
-        Figure[] figure = Figure[5];
-        figure[0] = new Rectangle(10, 10, "white");
-        figure[1] = new RightTriangle(10, 10, "white");
-        figure[2] = new IsoscelesTrapezoid(10, 10, 10, "white");
-        figure[3] = new Circle(10, "white");
-        figure[4] = new Square(10, "white");
+        Figure[] figure = {
+                new Rectangle(10, 10, "white"),
+                new RightTriangle(10, 10, "white"),
+                new IsoscelesTrapezoid(10, 10, 10, "white"),
+                new Circle(10, "white"),
+                new Square(10, "white")
+                };
         return figure;
     }
 

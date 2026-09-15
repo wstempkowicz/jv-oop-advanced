@@ -14,12 +14,12 @@ public class IsoscelesTrapezoid extends Figure {
     }
 
     public double getArea() {
-        return (this.side1 + this.side2) * this.sideh / 2;
+        return (side1 + side2) * sideh / 2;
     }
 
     public void draw() {
-         System.out.println ( "Figure " + getName() + " area: " + getArea()
+        System.out.println("Figure " + getName() + " area: " + getArea()
                 + " sq. units, side1: " + side2 + " units, side2: " + side2 + " units, sideh: "
-                + sideh + " units color: " + getColor() );
+                + sideh + " units color: " + getColor());
     }
 }

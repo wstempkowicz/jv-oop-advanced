@@ -10,11 +10,11 @@ public class Square extends Figure {
     }
 
     public double getArea() {
-        return this.side * this.side;
+        return side * side;
     }
 
     public void draw() {
-         System.out.println( "Figure " + getName() + " area: " + getArea()
-                + "sq. units, side: " + this.side + " units color: " + getColor());
+        System.out.println("Figure " + getName() + " area: " + getArea() + " sq. units, side: " 
+                + this.side + " units color: " + getColor());
     }
 }

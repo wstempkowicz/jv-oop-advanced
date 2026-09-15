@@ -7,17 +7,24 @@ public class MainApp {
     public static void main(String[] args) {
         
         FigureSupplier figureSupplier = new FigureSupplier();
-        Figure[] figuresRandom = new Figure[FIGURE_ARRAY_LENGTH/2];
+        Figure[] figures = new Figure[FIGURE_ARRAY_LENGTH];
 
-        figuresDefault = figureSupplier.getDefaultFigure());
+        Figure[] figuresDefault = figureSupplier.getDefaultFigure();
 
-        for (int i = 0; i < FIGURE_ARRAY_LENGTH/2; i++) {
+        Figure[] figuresRandom = new Figure[5];
+        for (int i = 0; i < FIGURE_ARRAY_LENGTH / 2; i++) {
             figuresRandom[i] = figureSupplier.getRandomFigure();
         }
 
-        Figure[] figures = ArrayUtils.addAll(figuresRandom, figuresDefault);
+        for (int i = 0; i < FIGURE_ARRAY_LENGTH; i++) {
+            if (i < FIGURE_ARRAY_LENGTH / 2) { 
+                figures[i] = figuresDefault[i];
+            } else {
+                figures[i] = figuresRandom[i - FIGURE_ARRAY_LENGTH / 2];
+            }
+        }
         for (Figure figure : figures) {
-            System.out.println(figure.draw());
+            figure.draw();
         }  
     }
 }
