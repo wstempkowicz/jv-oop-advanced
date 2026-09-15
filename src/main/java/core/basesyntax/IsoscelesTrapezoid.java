@@ -9,18 +9,17 @@ public class IsoscelesTrapezoid extends Figure {
         this.side1 = side1;
         this.side2 = side2;
         this.sideh = sideh;
-        super.setColor(color);
-        super.setName("isosceles trapezoid");
-        super.area = this.getArea();
+        super.color = color;
+        super.name = "isosceles trapezoid";
     }
 
     public double getArea() {
         return (this.side1 + this.side2) * this.sideh / 2;
     }
 
-    public String draw() {
-        return "Figure " + getName() + " pole: " + area
+    public void draw() {
+         System.out.println ( "Figure " + getName() + " area: " + getArea()
                 + " sq. units, side1: " + side2 + " units, side2: " + side2 + " units, sideh: "
-                + sideh + " units color: " + getColor();
+                + sideh + " units color: " + getColor() );
     }
 }

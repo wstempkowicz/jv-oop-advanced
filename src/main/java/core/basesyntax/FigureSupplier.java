@@ -8,8 +8,14 @@ public class FigureSupplier {
     private Random randomValueSupplier = new Random();
     private Figure randomFigure = null;
 
-    public Figure getDefaultFigure() {
-        return new Circle(10, "white");
+    public Figure[] getDefaultFigure() {
+        Figure[] figure = Figure[5];
+        figure[0] = new Rectangle(10, 10, "white");
+        figure[1] = new RightTriangle(10, 10, "white");
+        figure[2] = new IsoscelesTrapezoid(10, 10, 10, "white");
+        figure[3] = new Circle(10, "white");
+        figure[4] = new Square(10, "white");
+        return figure;
     }
 
     public Figure getRandomFigure() {
