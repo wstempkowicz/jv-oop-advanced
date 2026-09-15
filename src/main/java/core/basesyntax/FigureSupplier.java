@@ -4,9 +4,10 @@ import java.util.Random;
 
 public class FigureSupplier {
 
+    public static final int FIGURE_COUNT = 5;
+    public static final int RANDOM_LIMIT = 50;
     private FigureNames[] figureNames = FigureNames.values();
     private Random randomValueSupplier = new Random();
-    private Figure randomFigure = null;
 
     public Figure[] getDefaultFigure() {
         Figure[] figure = {
@@ -15,38 +16,40 @@ public class FigureSupplier {
                 new IsoscelesTrapezoid(10, 10, 10, "white"),
                 new Circle(10, "white"),
                 new Square(10, "white")
-                };
+        };
         return figure;
     }
 
+    ColorSupplier color = new ColorSupplier();
+
     public Figure getRandomFigure() {
-        int a;
-        int b;
-        int value = randomValueSupplier.nextInt(figureNames.length);
-        ColorSupplier color = new ColorSupplier();
+        int sidea;
+        int sideb;
+        int value = randomValueSupplier.nextInt(FIGURE_COUNT);
+
         String figureName = figureNames[value].name().toLowerCase();
         switch (figureName) {
             case "circle":
-                int radius = randomValueSupplier.nextInt(100);
+                int radius = randomValueSupplier.nextInt(RANDOM_LIMIT);
                 return new Circle(radius, color.getRandomColor());
             case "square":
-                a = randomValueSupplier.nextInt(100);
+                sidea = randomValueSupplier.nextInt(RANDOM_LIMIT);
                 return new Square(a, color.getRandomColor());
             case "rectangle":
-                a = randomValueSupplier.nextInt(100);
-                b = randomValueSupplier.nextInt(100);
-                Figure rectangle = new Rectangle(a, b, color.getRandomColor());
+                sidea = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                sideb = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                Figure rectangle = new Rectangle(sidea, sideb, color.getRandomColor());
                 return rectangle;
             case "right_triangle":
-                a = randomValueSupplier.nextInt(100);
-                b = randomValueSupplier.nextInt(100);
-                Figure rightTriangle = new RightTriangle(a, b, color.getRandomColor());
+                int firstLeg = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                int secondLeg = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                Figure rightTriangle = new RightTriangle(firstLeg, secondLeg, color.getRandomColor());
                 return rightTriangle;
             case "isosceles_trapezoid":
-                a = randomValueSupplier.nextInt(10);
-                b = randomValueSupplier.nextInt(10);
-                int h = randomValueSupplier.nextInt(10);
-                Figure isoscelesTrapezoid = new IsoscelesTrapezoid(a, b, h, color.getRandomColor());
+                double topBase = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                double bottomBase = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                double height = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                Figure isoscelesTrapezoid = new IsoscelesTrapezoid(topBase, bottomBase, height, color.getRandomColor());
                 return isoscelesTrapezoid;
             default:
                 return randomFigure;

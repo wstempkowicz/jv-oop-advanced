@@ -5,10 +5,10 @@ public class Circle extends Figure {
 
     public Circle(double radius, String color) {
         this.radius = radius;
-        super.color = color;
-        super.name = "circle";
+        super("circle", color);
     }
 
+    @override
     public double getArea() {
         return Math.PI * radius * radius;
     }
