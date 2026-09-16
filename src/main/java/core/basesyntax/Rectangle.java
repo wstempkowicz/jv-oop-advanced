@@ -4,14 +4,13 @@ public class Rectangle extends Figure {
     private double side1;
     private double side2;
 
-    public Rectangle(int side1, int side2, String color) {
+    public Rectangle(double side1, double side2, String color) {
+        super("rectangle", color);
         this.side1 = side1;
         this.side2 = side2;
-        super("rectangle", color);
     }
 
-    @override
-    public int getArea() {
+    public double getArea() {
         return side2 * side1;
     }
 

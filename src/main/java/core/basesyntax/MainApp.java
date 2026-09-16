@@ -3,7 +3,7 @@ package core.basesyntax;
 public class MainApp {
 
     private static final int FIGURE_ARRAY_LENGTH = 10;
-    public static final int FIGURE_COUNT = 5;
+    private static final int FIGURE_COUNT = 5;
 
     public static void main(String[] args) {
 

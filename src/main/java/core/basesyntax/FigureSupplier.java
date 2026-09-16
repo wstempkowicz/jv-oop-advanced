@@ -8,6 +8,7 @@ public class FigureSupplier {
     public static final int RANDOM_LIMIT = 50;
     private FigureNames[] figureNames = FigureNames.values();
     private Random randomValueSupplier = new Random();
+    private ColorSupplier color = new ColorSupplier();
 
     public Figure[] getDefaultFigure() {
         Figure[] figure = {
@@ -19,8 +20,6 @@ public class FigureSupplier {
         };
         return figure;
     }
-
-    ColorSupplier color = new ColorSupplier();
 
     public Figure getRandomFigure() {
         int sidea;
@@ -34,7 +33,7 @@ public class FigureSupplier {
                 return new Circle(radius, color.getRandomColor());
             case "square":
                 sidea = randomValueSupplier.nextInt(RANDOM_LIMIT);
-                return new Square(a, color.getRandomColor());
+                return new Square(sidea, color.getRandomColor());
             case "rectangle":
                 sidea = randomValueSupplier.nextInt(RANDOM_LIMIT);
                 sideb = randomValueSupplier.nextInt(RANDOM_LIMIT);
@@ -43,17 +42,21 @@ public class FigureSupplier {
             case "right_triangle":
                 int firstLeg = randomValueSupplier.nextInt(RANDOM_LIMIT);
                 int secondLeg = randomValueSupplier.nextInt(RANDOM_LIMIT);
-                Figure rightTriangle = new RightTriangle(firstLeg, secondLeg, color.getRandomColor());
+                Figure rightTriangle = new RightTriangle(firstLeg,
+                        secondLeg,
+                        color.getRandomColor());
                 return rightTriangle;
             case "isosceles_trapezoid":
                 double topBase = randomValueSupplier.nextInt(RANDOM_LIMIT);
                 double bottomBase = randomValueSupplier.nextInt(RANDOM_LIMIT);
                 double height = randomValueSupplier.nextInt(RANDOM_LIMIT);
-                Figure isoscelesTrapezoid = new IsoscelesTrapezoid(topBase, bottomBase, height, color.getRandomColor());
+                Figure isoscelesTrapezoid = new IsoscelesTrapezoid(topBase,
+                        bottomBase,
+                        height,
+                        color.getRandomColor());
                 return isoscelesTrapezoid;
             default:
-                return randomFigure;
+                return new Circle(10, "white");
         }
-
     }
 }
