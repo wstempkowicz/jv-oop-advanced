@@ -6,38 +6,31 @@ public class FigureSupplier {
 
     public static final int FIGURE_COUNT = 5;
     public static final int RANDOM_LIMIT = 50;
+    public static final int DEFAULT_RADIUS = 10;
+    public static final String DEFAULT_COLOR = "white";
     private FigureNames[] figureNames = FigureNames.values();
     private Random randomValueSupplier = new Random();
     private ColorSupplier color = new ColorSupplier();
 
-    public Figure[] getDefaultFigure() {
-        Figure[] figure = {
-                new Rectangle(10, 10, "white"),
-                new RightTriangle(10, 10, "white"),
-                new IsoscelesTrapezoid(10, 10, 10, "white"),
-                new Circle(10, "white"),
-                new Square(10, "white")
-        };
+    public Figure getDefaultFigure() {
+        Figure figure = new Circle(DEFAULT_RADIUS, DEFAULT_COLOR);
         return figure;
     }
 
     public Figure getRandomFigure() {
-        int sidea;
-        int sideb;
         int value = randomValueSupplier.nextInt(FIGURE_COUNT);
-
         String figureName = figureNames[value].name().toLowerCase();
         switch (figureName) {
             case "circle":
                 int radius = randomValueSupplier.nextInt(RANDOM_LIMIT);
                 return new Circle(radius, color.getRandomColor());
             case "square":
-                sidea = randomValueSupplier.nextInt(RANDOM_LIMIT);
-                return new Square(sidea, color.getRandomColor());
+                int sideA = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                return new Square(sideA, color.getRandomColor());
             case "rectangle":
-                sidea = randomValueSupplier.nextInt(RANDOM_LIMIT);
-                sideb = randomValueSupplier.nextInt(RANDOM_LIMIT);
-                Figure rectangle = new Rectangle(sidea, sideb, color.getRandomColor());
+                sideA = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                int sideB = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                Figure rectangle = new Rectangle(sideA, sideB, color.getRandomColor());
                 return rectangle;
             case "right_triangle":
                 int firstLeg = randomValueSupplier.nextInt(RANDOM_LIMIT);
@@ -56,7 +49,7 @@ public class FigureSupplier {
                         color.getRandomColor());
                 return isoscelesTrapezoid;
             default:
-                return new Circle(10, "white");
+                return null;
         }
     }
 }
