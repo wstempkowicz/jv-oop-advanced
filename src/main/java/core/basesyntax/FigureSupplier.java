@@ -22,27 +22,27 @@ public class FigureSupplier {
         String figureName = figureNames[value].name().toLowerCase();
         switch (figureName) {
             case "circle":
-                int radius = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                int radius = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
                 return new Circle(radius, color.getRandomColor());
             case "square":
-                int sideA = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                int sideA = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
                 return new Square(sideA, color.getRandomColor());
             case "rectangle":
-                sideA = randomValueSupplier.nextInt(RANDOM_LIMIT);
-                int sideB = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                sideA = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+                int sideB = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
                 Figure rectangle = new Rectangle(sideA, sideB, color.getRandomColor());
                 return rectangle;
             case "right_triangle":
-                int firstLeg = randomValueSupplier.nextInt(RANDOM_LIMIT);
-                int secondLeg = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                int firstLeg = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+                int secondLeg = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
                 Figure rightTriangle = new RightTriangle(firstLeg,
                         secondLeg,
                         color.getRandomColor());
                 return rightTriangle;
             case "isosceles_trapezoid":
-                double topBase = randomValueSupplier.nextInt(RANDOM_LIMIT);
-                double bottomBase = randomValueSupplier.nextInt(RANDOM_LIMIT);
-                double height = randomValueSupplier.nextInt(RANDOM_LIMIT);
+                double topBase = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+                double bottomBase = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+                double height = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
                 Figure isoscelesTrapezoid = new IsoscelesTrapezoid(topBase,
                         bottomBase,
                         height,
