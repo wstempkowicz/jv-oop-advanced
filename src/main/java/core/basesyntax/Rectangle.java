@@ -1,8 +1,8 @@
 package core.basesyntax;
 
 public class Rectangle extends Figure {
-    private double sideA;
-    private double sideB;
+    private final double sideA;
+    private final double sideB;
 
     public Rectangle(double sideA, double sideB, String color) {
         super("rectangle", color);
@@ -17,7 +17,7 @@ public class Rectangle extends Figure {
 
     @Override
     public void draw() {
-        System.out.println("Figure: " + getName() + " area: " + getArea()
+        System.out.println("Figure: " + getName() + ", area: " + getArea()
                 + " sq. units, sideA: " + sideA + " units, sideB: "
                 + sideB + " units, color: " + getColor());
     }
