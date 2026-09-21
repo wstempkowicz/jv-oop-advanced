@@ -17,34 +17,32 @@ public class FigureSupplier {
 
     public Figure getRandomFigure() {
         int figureIndex = randomValueSupplier.nextInt(FIGURE_COUNT);
-        String figureName = FigureNames.values()[figureIndex].name();
+        FigureNames figureName = FigureNames.values()[figureIndex];
         String color = colorSupplier.getRandomColor();
-        switch (figureName) {
-            case "CIRCLE":
-                int radius = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
-                return new Circle(radius, color);
-            case "SQUARE":
-                int sideAB = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
-                return new Square(sideAB, color);
-            case "RECTANGLE":
-                int sideA = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
-                int sideB = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
-                return new Rectangle(sideA, sideB, color);
-            case "RIGHT_TRIANGLE":
-                int firstLeg = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
-                int secondLeg = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
-                return new RightTriangle(firstLeg,
-                        secondLeg,
-                        color);
-            default:
-            case "ISOSCELES_TRAPEZOID":
-                double topBase = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
-                double bottomBase = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
-                double height = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
-                return new IsoscelesTrapezoid(topBase,
-                        bottomBase,
-                        height,
-                        color);
+        if (figureName == FigureNames.CIRCLE) {
+            int radius = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+            return new Circle(radius, color);
+        } else if (figureName == FigureNames.SQUARE) {
+            int side = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+            return new Square(side, color);
+        } else if (figureName == FigureNames.RECTANGLE) {
+            int sideA = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+            int sideB = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+            return new Rectangle(sideA, sideB, color);
+        } else if (figureName == FigureNames.RIGHT_TRIANGLE) {
+            int firstLeg = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+            int secondLeg = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+            return new RightTriangle(firstLeg,
+                    secondLeg,
+                    color);
+        } else {
+            double topBase = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+            double bottomBase = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+            double height = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
+            return new IsoscelesTrapezoid(topBase,
+                    bottomBase,
+                    height,
+                    color);
         }
     }
 }
