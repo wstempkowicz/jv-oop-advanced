@@ -36,15 +36,14 @@ public class FigureSupplier {
                 return new RightTriangle(firstLeg,
                     secondLeg,
                     color);
-            case ISOSCELES_TRAPEZOID: 
+            case ISOSCELES_TRAPEZOID:default: 
                 double topBase = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
                 double bottomBase = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
                 double height = randomValueSupplier.nextInt(RANDOM_LIMIT) + 1;
                 return new IsoscelesTrapezoid(topBase,
                     bottomBase,
                     height,
-                    color);
-            default: return null; 
+                    color); 
         }
     }
 }
